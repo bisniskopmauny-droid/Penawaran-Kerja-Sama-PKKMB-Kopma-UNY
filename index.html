@@ -46,6 +46,13 @@
     font-size:13.5px; letter-spacing:3px; text-transform:uppercase;
     color:var(--gold); font-weight:700;
   }
+  .eyebrow-lg{
+    display:inline-flex; align-items:center; gap:12px;
+    font-size:24px; letter-spacing:.3px; text-transform:none;
+    color:var(--navy-deep); font-weight:800;
+    font-family: Georgia, 'Times New Roman', serif;
+  }
+  .eyebrow-lg::before{ content:""; width:36px; height:2px; background:var(--gold); display:inline-block; }
   .eyebrow::before{ content:""; width:28px; height:1px; background:var(--gold); display:inline-block; }
   .btn{
     display:inline-block; padding:16px 36px; border-radius:2px;
@@ -199,15 +206,17 @@
 
   .pkg-block{ margin-bottom:22px; }
   .pkg-block h5{
-    font-family:'Trebuchet MS',-apple-system,sans-serif; font-size:12.5px; letter-spacing:1.8px;
-    text-transform:uppercase; margin:0 0 12px; font-weight:800;
+    font-family:'Trebuchet MS',-apple-system,sans-serif; font-size:14px; letter-spacing:2px;
+    text-transform:uppercase; margin:0 0 14px; font-weight:800;
   }
   .pkg.pkg-a .pkg-block h5{ color:var(--accent-a2); }
   .pkg.pkg-b .pkg-block h5{ color:var(--accent-b2); }
-  .pkg ul{ list-style:none; margin:0; padding:0; }
+  .pkg ul{ list-style:none; margin:0; padding:16px 18px; border-radius:6px; }
+  .pkg.pkg-a ul{ background:rgba(255,107,53,.09); }
+  .pkg.pkg-b ul{ background:rgba(0,180,166,.09); }
   .pkg li{
-    font-family:-apple-system,"Segoe UI",sans-serif; font-size:15.5px; color:rgba(255,255,255,.97);
-    padding:10px 0 10px 24px; position:relative; border-top:1px solid rgba(212,169,55,.22);
+    font-family:-apple-system,"Segoe UI",sans-serif; font-size:16.5px; font-weight:600; color:#FFFFFF;
+    padding:11px 0 11px 26px; position:relative; border-top:1px solid rgba(255,255,255,.14);
   }
   .pkg li:first-child{ border-top:none; }
   .pkg.pkg-a li::before{ content:"★"; position:absolute; left:0; color:var(--accent-a2); font-size:12px; top:11px; }
@@ -222,12 +231,20 @@
   .pkg.pkg-b .disclaimer{ background:rgba(0,180,166,.10); border-left:3px solid var(--accent-b2); }
 
   .collab-box{
-    border-radius:8px; padding:16px 18px; margin-top:4px;
+    border-radius:8px; padding:18px 20px; margin-top:4px;
   }
-  .pkg.pkg-a .collab-box{ background:rgba(255,107,53,.08); }
-  .pkg.pkg-b .collab-box{ background:rgba(0,180,166,.08); }
-  .collab-box p{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:15px; color:rgba(255,255,255,.95); margin:0 0 8px; }
+  .pkg.pkg-a .collab-box{ background:rgba(255,107,53,.12); }
+  .pkg.pkg-b .collab-box{ background:rgba(0,180,166,.12); }
+  .collab-box p{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:16.5px; color:#FFFFFF; margin:0 0 8px; font-weight:600; }
   .collab-box p:last-child{ margin-bottom:0; }
+  .collab-box ul{ list-style:none; margin:0; padding:0; }
+  .collab-box li{
+    font-family:-apple-system,"Segoe UI",sans-serif; font-size:16.5px; font-weight:600; color:#FFFFFF;
+    padding:7px 0 7px 24px; position:relative; line-height:1.65;
+  }
+  .collab-box li::before{ content:"✓"; position:absolute; left:0; font-weight:800; }
+  .pkg.pkg-a .collab-box li::before{ color:var(--accent-a2); }
+  .pkg.pkg-b .collab-box li::before{ color:var(--accent-b2); }
 
   .benefits{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:10px; }
   .benefit .ico{
@@ -315,8 +332,8 @@
         <div class="brand-name">KOPMA UNY</div>
         <div class="brand-sub">Koperasi Mahasiswa · Sejak 1982</div>
       </div>
-      <h1>Mari Bergerak Bersama,<br><em>Menyambut Mahasiswa Baru</em> UNY.</h1>
-      <p class="lead">Sebuah penawaran kerjasama strategis dari Kopma UNY kepada Panitia PKKMB Fakultas — memadukan dukungan nyata untuk acara kalian dengan kesempatan berharga bagi mahasiswa baru.</p>
+      <h1>Bergerak Bersama<br>Menyambut <em>Maba</em>.</h1>
+      <p class="lead">Sebuah penawaran kerjasama strategis dari Kopma UNY kepada Panitia PKKMB Fakultas.</p>
       <div class="hero-cta">
         <a href="#paket" class="btn btn-gold">Lihat Paket Kerjasama</a>
         <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
@@ -328,7 +345,7 @@
         <li><span class="num">01</span> Fresh money & dukungan dana untuk kebutuhan acara</li>
         <li><span class="num">02</span> Voucher belanja lintas unit bisnis Kopma UNY</li>
         <li><span class="num">03</span> Harga khusus untuk pemenuhan kebutuhan PKKMB</li>
-        <li><span class="num">04</span> Sepeda — hadiah sponsor Kopma UNY untuk mahasiswa baru</li>
+        <li><span class="num">04</span> Hadiah sepeda untuk mahasiswa baru</li>
       </ul>
     </div>
   </div>
@@ -365,7 +382,7 @@
         <div class="unit-logo logo-minimarket"><span class="mm-top"><b>M</b>ini</span><span class="mm-bottom">Market</span></div>
         <div class="tag">Ritel</div>
         <h4>Minimarket Kopma</h4>
-        <p>Belanja kebutuhan harian, atribut kampus, sampai perlengkapan kos — lengkap, dekat, dan harganya bersahabat buat mahasiswa.</p>
+        <p>Belanja kebutuhan harian, atribut kampus, sampai perlengkapan kos, lengkap, dekat, dan harganya bersahabat buat mahasiswa.</p>
         <span class="unit-ig-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
           Kunjungi Instagram <span class="arrow">→</span>
@@ -375,7 +392,7 @@
         <div class="unit-logo logo-geprek">Ayam<br>Geprek</div>
         <div class="tag">Kuliner</div>
         <h4>Ayam Geprek Sarjana</h4>
-        <p>Kuliner legendaris yang jadi tempat nongkrong favorit mahasiswa UNY lintas angkatan — pedasnya bikin nagih.</p>
+        <p>Kuliner legendaris yang jadi tempat nongkrong favorit mahasiswa UNY lintas angkatan, pedasnya bikin nagih.</p>
         <span class="unit-ig-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
           Kunjungi Instagram <span class="arrow">→</span>
@@ -395,7 +412,7 @@
         <div class="unit-logo logo-jnp">J&P</div>
         <div class="tag">Layanan</div>
         <h4>Jasa & Persewaan Kopma</h4>
-        <p>Sewa peralatan acara — sound, tenda, meja kursi, dan lainnya — siap membantu teknis PKKMB Fakultas berjalan lancar.</p>
+        <p>Sewa peralatan acara, sound, tenda, meja kursi, dan lainnya, siap membantu teknis PKKMB Fakultas berjalan lancar.</p>
         <span class="unit-ig-cta">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
           Kunjungi Instagram <span class="arrow">→</span>
@@ -405,7 +422,7 @@
     <div class="about-stats reveal">
       <div class="stat"><b>1982</b><span>Tahun berdiri</span></div>
       <div class="stat"><b>4</b><span>Unit bisnis aktif</span></div>
-      <div class="stat"><b>5.600+</b><span>Anggota mahasiswa</span></div>
+      <div class="stat"><b>1.500+</b><span>Anggota mahasiswa</span></div>
     </div>
   </div>
 </section>
@@ -431,8 +448,8 @@
             <li>Fresh money</li>
             <li>Voucher belanja di 4 unit bisnis Kopma UNY (Minimarket, Ayam Geprek Sarjana, O'Leker, Jasa & Persewaan)</li>
             <li>Harga khusus untuk pemenuhan kebutuhan acara</li>
-            <li>Voucher belanja khusus yang tetap berlaku pascaacara</li>
-            <li>Dukungan hadiah sepeda dari Kopma UNY untuk mahasiswa baru</li>
+            <li>Voucher belanja khusus yang tetap berlaku pasca acara</li>
+            <li>Hadiah sepeda untuk mahasiswa baru</li>
           </ul>
           <div class="disclaimer"><b>Catatan:</b> benefit tambahan di luar daftar ini dapat diajukan dan dibicarakan lebih lanjut bersama tim Kopma UNY selama proses negosiasi.</div>
         </div>
@@ -440,8 +457,10 @@
         <div class="pkg-block">
           <h5>Bentuk Kerjasama</h5>
           <div class="collab-box">
-            <p>Panitia menganjurkan mahasiswa baru membeli atribut di Minimarket Kopma UNY, informasi bisa dicantumkan di booklet peserta, feed Instagram, atau broadcast WhatsApp.</p>
-            <p>Panitia memberikan slot open mic singkat untuk Kopma UNY di rangkaian acara.</p>
+            <ul>
+              <li>Panitia mengarahkan mahasiswa baru membeli atribut di Minimarket Kopma UNY, informasi dicantumkan di booklet peserta, feed Instagram, dan broadcast WhatsApp.</li>
+              <li>Panitia menyediakan slot open mic singkat untuk Kopma UNY.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -458,8 +477,8 @@
             <li>Fresh money</li>
             <li>Voucher belanja di 4 unit bisnis Kopma UNY (Minimarket, Ayam Geprek Sarjana, O'Leker, Jasa & Persewaan)</li>
             <li>Harga khusus untuk pemenuhan kebutuhan acara</li>
-            <li>Voucher belanja khusus yang tetap berlaku pascaacara</li>
-            <li>Dukungan hadiah sepeda dari Kopma UNY untuk mahasiswa baru</li>
+            <li>Voucher belanja khusus yang tetap berlaku pasca acara</li>
+            <li>Hadiah sepeda untuk mahasiswa baru</li>
           </ul>
           <div class="disclaimer"><b>Catatan:</b> benefit tambahan di luar daftar ini dapat diajukan dan dibicarakan lebih lanjut bersama tim Kopma UNY selama proses negosiasi.</div>
         </div>
@@ -467,8 +486,10 @@
         <div class="pkg-block">
           <h5>Bentuk Kerjasama</h5>
           <div class="collab-box">
-            <p>Panitia mengumumkan campaign Kopma Creative Day — mahasiswa baru membuat konten kreatif seputar Kopma UNY atau salah satu unit bisnisnya dengan hashtag #KopmaUNY.</p>
-            <p>Panitia memberikan slot open mic singkat untuk Kopma UNY di rangkaian acara.</p>
+            <ul>
+              <li>Panitia mengumumkan campaign Kopma Creative Day, mahasiswa baru membuat konten kreatif seputar Kopma UNY atau salah satu unit bisnisnya dengan hashtag #KopmaUNY.</li>
+              <li>Panitia menyediakan slot open mic singkat untuk Kopma UNY.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -479,7 +500,7 @@
       <div class="award-steps">
         <div class="award-step">
           <div class="n">1</div>
-          <p>Sepeda adalah <strong>hadiah sponsor dari Kopma UNY</strong>, bukan sesi acara tersendiri — jadi tidak perlu penamaan khusus.</p>
+          <p>Sepeda adalah <strong>hadiah sponsor dari Kopma UNY</strong>, bukan sesi acara tersendiri, jadi tidak perlu penamaan khusus.</p>
         </div>
         <div class="award-step">
           <div class="n">2</div>
@@ -498,8 +519,7 @@
 <section>
   <div class="wrap">
     <div class="section-head reveal">
-      <span class="eyebrow">Kenapa Bekerja Sama dengan Kami</span>
-      <h2>Nilai Lebih yang Kamu Dapatkan</h2>
+      <span class="eyebrow eyebrow-lg">Kenapa Bekerja Sama dengan Kami</span>
     </div>
     <div class="benefits">
       <div class="benefit reveal reveal-1">
@@ -515,7 +535,7 @@
       <div class="benefit reveal reveal-3">
         <div class="ico">3</div>
         <h4>Kerjasama yang Berkelanjutan</h4>
-        <p>Voucher belanja khusus tetap berlaku pascaacara, menjadikan kolaborasi ini bernilai jangka panjang.</p>
+        <p>Voucher belanja khusus tetap berlaku pasca acara, menjadikan kolaborasi ini bernilai jangka panjang.</p>
       </div>
     </div>
   </div>
