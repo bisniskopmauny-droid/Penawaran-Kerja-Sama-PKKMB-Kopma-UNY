@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposal Kerjasama — Kopma UNY × PKKMB Fakultas</title>
+<style>
+  :root{
+    --navy: #0B2545;
+    --navy-deep: #071B33;
+    --gold: #D4A937;
+    --gold-soft: #F1D98B;
+    --white: #FFFFFF;
+    --cream: #F7F8FA;
+    --ink: #1B2430;
+    --line: rgba(11,37,69,0.12);
+
+    /* accent warna untuk bagian penawaran (lebih mencolok, beda dari navy/gold utama) */
+    --accent-a: #FF6B35;   /* jingga hangat */
+    --accent-a2: #FFB84D;  /* kuning-jingga */
+    --accent-b: #00B4A6;   /* teal segar */
+    --accent-b2: #7CE0D3;
+
+    /* warna unit bisnis (mengikuti logo asli) */
+    --unit-red: #E8332A;
+    --unit-yellow: #F2C230;
+    --unit-blue: #1C8FDB;
+    --unit-blue-deep: #14508C;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--white);
+    color:var(--ink);
+    font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height:1.65;
+  }
+  .serif{ font-family: Georgia, 'Iowan Old Style', 'Times New Roman', serif; }
+  h1,h2,h3, .serif-display{ font-family: Georgia, 'Times New Roman', serif; letter-spacing:.2px; }
+
+  /* ---------- utility ---------- */
+  .wrap{ max-width:1080px; margin:0 auto; padding:0 32px; }
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:10px;
+    font-size:12.5px; letter-spacing:3px; text-transform:uppercase;
+    color:var(--gold); font-weight:700;
+  }
+  .eyebrow::before{ content:""; width:28px; height:1px; background:var(--gold); display:inline-block; }
+  .btn{
+    display:inline-block; padding:15px 34px; border-radius:2px;
+    text-decoration:none; font-weight:700; letter-spacing:.5px; font-size:15px;
+    transition: transform .25s ease, box-shadow .25s ease;
+    border:1px solid transparent; cursor:pointer;
+  }
+  .btn-gold{ background:var(--gold); color:var(--navy-deep); }
+  .btn-gold:hover{ transform:translateY(-2px); box-shadow:0 12px 24px -8px rgba(212,169,55,.55); }
+  .btn-outline{ border-color:rgba(255,255,255,.5); color:var(--white); }
+  .btn-outline:hover{ background:rgba(255,255,255,.08); transform:translateY(-2px); }
+
+  /* ---------- top ribbon ---------- */
+  .ribbon{
+    background:var(--navy-deep); color:var(--gold-soft);
+    text-align:center; font-size:12.5px; letter-spacing:2px;
+    padding:9px 0; text-transform:uppercase;
+  }
+
+  /* ---------- hero ---------- */
+  header.hero{
+    position:relative; overflow:hidden;
+    background:
+      radial-gradient(1100px 500px at 85% -10%, rgba(212,169,55,.18), transparent 60%),
+      linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 65%, #05141F 100%);
+    color:var(--white);
+    padding:90px 0 110px;
+  }
+  .hero-grid{ display:grid; grid-template-columns: 1.15fr .85fr; gap:50px; align-items:center; }
+  .brandline{ display:flex; flex-direction:column; gap:4px; margin-bottom:46px; }
+  .brand-name{
+    font-family:'Arial Black', 'Arial Bold', Impact, -apple-system, sans-serif;
+    font-size:44px; font-weight:900; letter-spacing:1px; line-height:1;
+    background:linear-gradient(180deg, #FFFFFF 0%, #FFF176 35%, #FFEA00 75%, #FFD500 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    text-shadow:0 0 14px rgba(255,234,0,.85), 0 0 34px rgba(255,213,0,.55), 0 2px 0 rgba(28,143,219,.3);
+    -webkit-text-stroke:0.5px rgba(20,80,140,.15);
+  }
+  .brand-sub{ font-size:12.5px; color:rgba(255,255,255,.5); letter-spacing:2px; text-transform:uppercase; font-family:-apple-system,"Segoe UI",sans-serif; }
+
+  .hero h1{
+    font-size:52px; line-height:1.12; margin:0 0 22px; font-weight:400;
+    color:var(--white);
+  }
+  .hero h1 em{ font-style:italic; color:var(--gold-soft); }
+  .hero p.lead{ font-size:17.5px; color:rgba(255,255,255,.78); max-width:520px; margin:0 0 38px; font-family:-apple-system,"Segoe UI",sans-serif; }
+  .hero-cta{ display:flex; gap:16px; flex-wrap:wrap; }
+
+  .hero-card{
+    background:rgba(255,255,255,.045);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:4px; padding:34px 30px;
+    backdrop-filter: blur(6px);
+  }
+  .hero-card .kicker{ color:var(--gold-soft); font-size:12px; letter-spacing:2px; text-transform:uppercase; font-weight:700; }
+  .hero-card ul{ list-style:none; padding:0; margin:18px 0 0; }
+  .hero-card li{
+    display:flex; gap:12px; padding:12px 0; font-size:14.5px; color:rgba(255,255,255,.85);
+    border-top:1px solid rgba(255,255,255,.1);
+    font-family:-apple-system,"Segoe UI",sans-serif;
+  }
+  .hero-card li:first-of-type{ border-top:none; }
+  .hero-card .num{ color:var(--gold); font-weight:700; font-family:Georgia,serif; }
+
+  /* ---------- section shell ---------- */
+  section{ padding:96px 0; }
+  .section-head{ max-width:700px; margin:0 0 56px; }
+  .section-head h2{ font-size:36px; font-weight:400; margin:16px 0 0; color:var(--navy-deep); }
+  .section-head p{ font-family:-apple-system,"Segoe UI",sans-serif; color:#5b6472; font-size:16px; margin-top:14px; }
+  .divider{ height:1px; background:linear-gradient(90deg, var(--line), transparent); }
+
+  /* ---------- pembuka (letter) ---------- */
+  .letter-section{ background:var(--cream); }
+  .letter{
+    background:var(--white); border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    padding:52px 56px; box-shadow:0 30px 60px -35px rgba(11,37,69,.25);
+  }
+  .letter p{ font-family: Georgia, 'Times New Roman', serif; font-size:17px; color:#2b3442; margin:0 0 20px; }
+  .letter .sign{ margin-top:34px; font-family:-apple-system,"Segoe UI",sans-serif; }
+  .letter .sign .role{ color:#7a8393; font-size:13px; letter-spacing:1px; text-transform:uppercase; }
+  .letter .sign .name{ font-family:Georgia,serif; font-size:20px; color:var(--navy-deep); margin-top:4px; }
+
+  /* ---------- tentang / unit bisnis ---------- */
+  .units{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:10px;}
+  .unit{ background:var(--white); padding:30px 24px; font-family:-apple-system,"Segoe UI",sans-serif; }
+  .unit-logo{
+    width:56px; height:56px; border-radius:50%; margin-bottom:16px;
+    display:flex; align-items:center; justify-content:center;
+    font-family:Georgia,serif; font-weight:700; font-size:12px; text-align:center;
+    color:#fff; box-shadow:0 6px 16px -6px rgba(0,0,0,.35); line-height:1.15; padding:4px;
+    overflow:hidden;
+  }
+  .logo-minimarket{ flex-direction:column; gap:0; line-height:1.05; }
+  .logo-minimarket .mm-top{ font-size:11px; }
+  .logo-minimarket .mm-top b{ font-size:13px; }
+  .logo-minimarket .mm-bottom{ font-size:10px; }
+  /* Minimarket: dasar putih, M merah, swoosh navy (persis logo asli) */
+  .logo-minimarket{ background:#FFFFFF; border:2px solid #22258A; color:#22258A; }
+  .logo-minimarket b{ color:#E11B22; }
+  /* Ayam Geprek Sarjana: kuning-jingga-merah dengan aksen topi hitam */
+  .logo-geprek{ background:linear-gradient(160deg, #F6C21A 0%, #F08A1E 45%, #E0272A 100%); color:#231000; border:2px solid #1a1a1a; }
+  /* O'Leker: merah dominan, sabit kuning, outline coklat khas logo */
+  .logo-oleker{ background:radial-gradient(circle at 30% 30%, #F6C21A 0%, #E0272A 55%); color:#FFF6DD; border:2px solid #6B3A1A; text-shadow:0 1px 0 #6B3A1A; }
+  /* J&P: biru gradasi tepat seperti logo (tua di tepi, muda di tengah) */
+  .logo-jnp{ background:linear-gradient(135deg, #123E73 0%, #1C8FDB 50%, #123E73 100%); }
+  .unit .tag{ color:var(--gold); font-weight:700; font-size:12px; letter-spacing:1.5px; text-transform:uppercase; }
+  .unit h4{ font-family:Georgia,serif; font-size:19px; color:var(--navy-deep); margin:10px 0 8px; font-weight:400; }
+  .unit p{ font-size:14px; color:#3f4855; margin:0; line-height:1.6; }
+  .about-stats{ display:flex; gap:48px; margin-top:44px; flex-wrap:wrap; }
+  .stat b{ display:block; font-family:Georgia,serif; font-size:34px; color:var(--navy-deep); }
+  .stat span{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:13px; color:#7a8393; letter-spacing:.5px; }
+
+  /* ---------- paket kerjasama (MENCOLOK) ---------- */
+  .packages-section{
+    background:
+      radial-gradient(900px 420px at 10% 0%, rgba(255,107,53,.10), transparent 60%),
+      radial-gradient(900px 420px at 95% 100%, rgba(0,180,166,.10), transparent 60%),
+      var(--navy-deep);
+    color:var(--white);
+  }
+  .packages-section .section-head h2{
+    color:var(--white);
+    font-family: 'Trebuchet MS', -apple-system, sans-serif;
+    font-weight:800; letter-spacing:-.5px;
+  }
+  .packages-section .section-head p{ color:rgba(255,255,255,.62); }
+  .packages-section .eyebrow{ color:var(--accent-a2); }
+  .packages-section .eyebrow::before{ background:var(--accent-a2); }
+
+  .pkg-grid{ display:grid; grid-template-columns:1fr 1fr; gap:28px; }
+  .pkg{
+    background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:10px; padding:38px 34px 34px; position:relative; overflow:hidden;
+    display:flex; flex-direction:column;
+  }
+  .pkg.pkg-a::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--accent-a), var(--accent-a2));
+  }
+  .pkg.pkg-b::before{
+    content:""; position:absolute; top:0; left:0; right:0; height:5px;
+    background:linear-gradient(90deg, var(--accent-b), var(--accent-b2));
+  }
+  .pkg-name{ font-size:12px; letter-spacing:2.5px; text-transform:uppercase; font-weight:800; font-family:'Trebuchet MS',sans-serif; }
+  .pkg.pkg-a .pkg-name{ color:var(--accent-a2); }
+  .pkg.pkg-b .pkg-name{ color:var(--accent-b2); }
+  .pkg h3{
+    font-size:28px; font-weight:800; margin:10px 0 4px; color:var(--white);
+    font-family:'Trebuchet MS', -apple-system, sans-serif; letter-spacing:-.5px;
+  }
+  .pkg .pkg-desc{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:14px; color:rgba(255,255,255,.6); margin-bottom:26px; }
+
+  .pkg-block{ margin-bottom:22px; }
+  .pkg-block h5{
+    font-family:'Trebuchet MS',-apple-system,sans-serif; font-size:11.5px; letter-spacing:1.8px;
+    text-transform:uppercase; margin:0 0 12px; font-weight:800;
+  }
+  .pkg.pkg-a .pkg-block h5{ color:var(--accent-a2); }
+  .pkg.pkg-b .pkg-block h5{ color:var(--accent-b2); }
+  .pkg ul{ list-style:none; margin:0; padding:0; }
+  .pkg li{
+    font-family:-apple-system,"Segoe UI",sans-serif; font-size:14.5px; color:rgba(255,255,255,.9);
+    padding:9px 0 9px 24px; position:relative; border-top:1px solid rgba(255,255,255,.08);
+  }
+  .pkg li:first-child{ border-top:none; }
+  .pkg.pkg-a li::before{ content:"★"; position:absolute; left:0; color:var(--accent-a2); font-size:12px; top:11px; }
+  .pkg.pkg-b li::before{ content:"★"; position:absolute; left:0; color:var(--accent-b2); font-size:12px; top:11px; }
+  .pkg .custom-slot{
+    margin-top:6px; border-radius:6px; padding:14px 16px; font-family:-apple-system,"Segoe UI",sans-serif;
+    font-size:13px; color:rgba(255,255,255,.6); font-style:italic;
+  }
+  .pkg.pkg-a .custom-slot{ border:1.5px dashed rgba(255,107,53,.5); }
+  .pkg.pkg-b .custom-slot{ border:1.5px dashed rgba(0,180,166,.5); }
+  .highlight-tag{
+    display:inline-block; margin-top:4px; padding:6px 14px; border-radius:20px;
+    font-size:12px; font-family:'Trebuchet MS',sans-serif; font-weight:800;
+  }
+  .pkg.pkg-a .highlight-tag{ background:rgba(255,107,53,.18); border:1px solid rgba(255,107,53,.5); color:var(--accent-a2); }
+  .pkg.pkg-b .highlight-tag{ background:rgba(0,180,166,.18); border:1px solid rgba(0,180,166,.5); color:var(--accent-b2); }
+
+  /* kotak "bentuk kerjasama" pengganti kewajiban */
+  .collab-box{
+    border-radius:8px; padding:16px 18px; margin-top:4px;
+  }
+  .pkg.pkg-a .collab-box{ background:rgba(255,107,53,.08); }
+  .pkg.pkg-b .collab-box{ background:rgba(0,180,166,.08); }
+  .collab-box p{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:14px; color:rgba(255,255,255,.85); margin:0 0 8px; }
+  .collab-box p:last-child{ margin-bottom:0; }
+
+  /* ---------- benefit / kenapa kerjasama ---------- */
+  .benefits{ display:grid; grid-template-columns:repeat(3,1fr); gap:30px; margin-top:10px; }
+  .benefit .ico{
+    width:52px; height:52px; border-radius:12px; background:linear-gradient(135deg, var(--gold), var(--gold-soft));
+    display:flex; align-items:center; justify-content:center; margin-bottom:20px;
+    color:var(--navy-deep); font-family:'Trebuchet MS',sans-serif; font-size:20px; font-weight:800;
+  }
+  .benefit h4{ font-family:Georgia,serif; font-weight:700; font-size:20px; color:var(--navy-deep); margin:0 0 10px; }
+  .benefit p{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:14.5px; color:#4a5361; margin:0; font-weight:500; }
+
+  /* ---------- awarding — sekarang "Apresiasi Kopma" sederhana ---------- */
+  .award-strip{
+    background: var(--cream); border:1px solid var(--line); border-radius:8px;
+    padding:40px 44px; margin-top:70px;
+  }
+  .award-strip h3{ font-family:Georgia,serif; font-weight:700; font-size:22px; color:var(--navy-deep); margin:0 0 18px; }
+  .award-steps{ display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+  .award-step{ background:#fff; border:1px solid var(--line); border-radius:8px; padding:20px; }
+  .award-step .n{
+    width:30px; height:30px; border-radius:50%; background:var(--gold); color:var(--navy-deep);
+    font-weight:800; font-family:'Trebuchet MS',sans-serif; display:flex; align-items:center; justify-content:center;
+    margin-bottom:12px; font-size:14px;
+  }
+  .award-step p{ font-family:-apple-system,"Segoe UI",sans-serif; font-size:14px; color:#3f4855; margin:0; line-height:1.55; }
+  .hashtag{
+    display:inline-block; margin-top:18px; padding:8px 16px; background:var(--navy-deep);
+    color:var(--gold-soft); border-radius:20px; font-family:-apple-system,"Segoe UI",sans-serif;
+    font-weight:700; font-size:13px; letter-spacing:.5px;
+  }
+
+  /* ---------- CTA / kontak ---------- */
+  .cta-section{
+    background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--white); text-align:center; position:relative; overflow:hidden;
+  }
+  .cta-section::before{
+    content:""; position:absolute; inset:0;
+    background:radial-gradient(700px 300px at 50% 0%, rgba(212,169,55,.16), transparent 65%);
+  }
+  .cta-inner{ position:relative; max-width:640px; margin:0 auto; }
+  .cta-section h2{ font-size:34px; font-weight:400; margin:16px 0 18px; }
+  .cta-section p{ font-family:-apple-system,"Segoe UI",sans-serif; color:rgba(255,255,255,.7); font-size:16px; margin-bottom:38px; }
+  .contact-card{
+    display:inline-flex; gap:26px; align-items:center; background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.16); padding:22px 32px; border-radius:6px; margin-top:8px;
+    font-family:-apple-system,"Segoe UI",sans-serif; flex-wrap:wrap; justify-content:center;
+  }
+  .contact-card .c-item{ text-align:left; }
+  .contact-card .c-item .lbl{ font-size:11.5px; letter-spacing:1.5px; text-transform:uppercase; color:var(--gold-soft); }
+  .contact-card .c-item .val{ font-size:16px; font-weight:700; margin-top:4px; }
+
+  /* ---------- footer ---------- */
+  footer{ background:var(--navy-deep); color:rgba(255,255,255,.5); padding:34px 0; text-align:center; font-family:-apple-system,"Segoe UI",sans-serif; font-size:13px; }
+  footer strong{ color:rgba(255,255,255,.8); }
+
+  @media (max-width: 880px){
+    .hero-grid{ grid-template-columns:1fr; }
+    .hero h1{ font-size:38px; }
+    .units{ grid-template-columns:1fr 1fr; }
+    .pkg-grid{ grid-template-columns:1fr; }
+    .benefits{ grid-template-columns:1fr; }
+    .award-steps{ grid-template-columns:1fr; }
+    .wrap{ padding:0 22px; }
+    .letter{ padding:34px 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="ribbon">Proposal Penawaran Digital · Kopma UNY untuk Panitia PKKMB Fakultas 2026</div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="brandline">
+        <div class="brand-name">KOPMA UNY</div>
+        <div class="brand-sub">Koperasi Mahasiswa · Sejak 1982</div>
+      </div>
+      <h1>Mari Bergerak Bersama,<br><em>Menyambut Mahasiswa Baru</em> UNY.</h1>
+      <p class="lead">Sebuah penawaran kerjasama strategis dari Kopma UNY kepada Panitia PKKMB Fakultas — memadukan dukungan nyata untuk acara kalian dengan kesempatan berharga bagi mahasiswa baru.</p>
+      <div class="hero-cta">
+        <a href="#paket" class="btn btn-gold">Lihat Paket Kerjasama</a>
+        <a href="#kontak" class="btn btn-outline">Hubungi Kami</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="kicker">Sekilas Penawaran</div>
+      <ul>
+        <li><span class="num">01</span> Fresh money & dukungan dana untuk kebutuhan acara</li>
+        <li><span class="num">02</span> Voucher belanja lintas unit bisnis Kopma UNY</li>
+        <li><span class="num">03</span> Harga khusus untuk pemenuhan kebutuhan PKKMB</li>
+        <li><span class="num">04</span> Sepeda — hadiah sponsor Kopma UNY untuk mahasiswa baru</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<section class="letter-section">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kalimat Pembuka</span>
+      <h2>Salam Hangat dari Kopma UNY</h2>
+    </div>
+    <div class="letter">
+      <p>Kepada Yth. Panitia Penyelenggara PKKMB Fakultas di lingkungan Universitas Negeri Yogyakarta,</p>
+      <p>Dengan penuh rasa hormat, kami dari Koperasi Mahasiswa (Kopma) UNY — unit kegiatan mahasiswa yang telah menjadi bagian dari perjalanan kampus ini sejak 1982 — ingin menyampaikan rasa antusias kami untuk turut berkontribusi dalam suksesnya Pengenalan Kehidupan Kampus bagi Mahasiswa Baru (PKKMB) tahun ini.</p>
+      <p>Sebagai sesama mahasiswa yang menjalankan roda organisasi dan bisnis secara profesional, kami memahami betul beban dan kebutuhan panitia dalam mempersiapkan sebuah acara besar. Karena itu, kami hadir bukan sekadar sebagai penyedia produk, melainkan sebagai mitra yang ingin tumbuh bersama — mendukung kelancaran acara sekaligus memperkenalkan mahasiswa baru pada layanan-layanan yang akan menemani hari-hari perkuliahan mereka.</p>
+      <p>Melalui dokumen digital ini, kami mengajukan dua pilihan bentuk kerjasama yang telah kami rancang secara matang, transparan, dan saling menguntungkan bagi kedua belah pihak. Besar harapan kami, penawaran ini dapat menjadi awal dari kolaborasi yang berkesan.</p>
+      <div class="sign">
+        <div class="role">Hormat kami,</div>
+        <div class="name">Manajemen Kopma UNY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Tentang Kami</span>
+      <h2>Empat Unit Bisnis, Satu Komitmen Melayani Mahasiswa</h2>
+      <p>Kopma UNY adalah koperasi konsumen berbasis mahasiswa yang telah berdiri lebih dari empat dekade, dengan jangkauan usaha yang menyatu dalam keseharian civitas akademika UNY.</p>
+    </div>
+    <div class="units">
+      <div class="unit">
+        <div class="unit-logo logo-minimarket"><span class="mm-top"><b>M</b>ini</span><span class="mm-bottom">Market</span></div>
+        <div class="tag">Ritel</div>
+        <h4>Minimarket Kopma</h4>
+        <p>Belanja kebutuhan harian, atribut kampus, sampai perlengkapan kos — lengkap, dekat, dan harganya bersahabat buat mahasiswa.</p>
+      </div>
+      <div class="unit">
+        <div class="unit-logo logo-geprek">Ayam<br>Geprek</div>
+        <div class="tag">Kuliner</div>
+        <h4>Ayam Geprek Sarjana</h4>
+        <p>Kuliner legendaris yang jadi tempat nongkrong favorit mahasiswa UNY lintas angkatan — pedasnya bikin nagih.</p>
+      </div>
+      <div class="unit">
+        <div class="unit-logo logo-oleker">O'Leker</div>
+        <div class="tag">Kuliner</div>
+        <h4>O'Leker by Kopma UNY</h4>
+        <p>Camilan crepes khas Kopma yang manis-gurih, jadi teman santai mahasiswa di sela jam kuliah.</p>
+      </div>
+      <div class="unit">
+        <div class="unit-logo logo-jnp">J&P</div>
+        <div class="tag">Layanan</div>
+        <h4>Jasa & Persewaan Kopma</h4>
+        <p>Sewa peralatan acara — sound, tenda, meja kursi, dan lainnya — siap membantu teknis PKKMB Fakultas berjalan lancar.</p>
+      </div>
+    </div>
+    <div class="about-stats">
+      <div class="stat"><b>1982</b><span>Tahun berdiri</span></div>
+      <div class="stat"><b>4</b><span>Unit bisnis aktif</span></div>
+      <div class="stat"><b>5.600+</b><span>Anggota mahasiswa</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="packages-section" id="paket">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Penawaran Kerjasama</span>
+      <h2>Pilih Paket yang Paling Sesuai dengan Konsep Acaramu</h2>
+      <p>Dua skema kerjasama berikut dirancang fleksibel — silakan pilih, diskusikan, atau padukan sesuai kebutuhan PKKMB Fakultas kalian.</p>
+    </div>
+
+    <div class="pkg-grid">
+      <!-- PAKET 1 -->
+      <div class="pkg pkg-a">
+        <div class="pkg-name">Paket Kolaborasi 01</div>
+        <h3>Sinergi Promo Atribut</h3>
+        <p class="pkg-desc">Kerjasama berbasis promosi produk atribut kampus kepada mahasiswa baru.</p>
+
+        <div class="pkg-block">
+          <h5>Benefit Kerjasama</h5>
+          <ul>
+            <li>Fresh money Rp1.000.000</li>
+            <li>Voucher belanja di 4 unit bisnis Kopma UNY (Minimarket, Ayam Geprek Sarjana, O'Leker, Jasa & Persewaan)</li>
+            <li>Harga khusus untuk pemenuhan kebutuhan acara</li>
+            <li>Voucher belanja khusus yang tetap berlaku pascaacara</li>
+            <li>Dukungan hadiah sepeda dari Kopma UNY untuk mahasiswa baru</li>
+          </ul>
+          <div class="custom-slot">+ Tambahkan benefit custom lain di sini sesuai kesepakatan lanjutan</div>
+        </div>
+
+        <div class="pkg-block">
+          <h5>Bentuk Kerjasama</h5>
+          <div class="collab-box">
+            <p>Panitia menganjurkan mahasiswa baru membeli atribut di Minimarket Kopma UNY, informasi bisa dicantumkan di booklet peserta, feed Instagram, atau broadcast WhatsApp.</p>
+            <p>Panitia memberikan slot open mic singkat untuk Kopma UNY di rangkaian acara.</p>
+          </div>
+        </div>
+        <span class="highlight-tag">Cocok untuk fokus penjualan atribut</span>
+      </div>
+
+      <!-- PAKET 2 -->
+      <div class="pkg pkg-b">
+        <div class="pkg-name">Paket Kolaborasi 02</div>
+        <h3>Kopma Creative Day</h3>
+        <p class="pkg-desc">Kerjasama berbasis campaign konten sosial media mahasiswa baru.</p>
+
+        <div class="pkg-block">
+          <h5>Benefit Kerjasama</h5>
+          <ul>
+            <li>Fresh money Rp1.000.000</li>
+            <li>Voucher belanja di 4 unit bisnis Kopma UNY (Minimarket, Ayam Geprek Sarjana, O'Leker, Jasa & Persewaan)</li>
+            <li>Harga khusus untuk pemenuhan kebutuhan acara</li>
+            <li>Voucher belanja khusus yang tetap berlaku pascaacara</li>
+            <li>Dukungan hadiah sepeda dari Kopma UNY untuk mahasiswa baru</li>
+          </ul>
+          <div class="custom-slot">+ Tambahkan benefit custom lain di sini sesuai kesepakatan lanjutan</div>
+        </div>
+
+        <div class="pkg-block">
+          <h5>Bentuk Kerjasama</h5>
+          <div class="collab-box">
+            <p>Panitia mengumumkan campaign Kopma Creative Day — mahasiswa baru membuat konten kreatif seputar Kopma UNY atau salah satu unit bisnisnya dengan hashtag #KopmaUNY.</p>
+            <p>Panitia memberikan slot open mic singkat untuk Kopma UNY di rangkaian acara.</p>
+          </div>
+        </div>
+        <span class="highlight-tag">Cocok untuk booster engagement sosial media</span>
+      </div>
+    </div>
+
+    <div class="award-strip">
+      <h3>Bagaimana Hadiah Sepeda Dibagikan?</h3>
+      <div class="award-steps">
+        <div class="award-step">
+          <div class="n">1</div>
+          <p>Sepeda adalah <strong>hadiah sponsor dari Kopma UNY</strong>, bukan sesi acara tersendiri — jadi tidak perlu penamaan khusus.</p>
+        </div>
+        <div class="award-step">
+          <div class="n">2</div>
+          <p>Mekanisme dan waktu pembagian hadiah <strong>sepenuhnya mengikuti rundown acara PKKMB</strong> di masing-masing fakultas.</p>
+        </div>
+        <div class="award-step">
+          <div class="n">3</div>
+          <p>Khusus Paket 02, konten peserta cukup ditandai dengan hashtag resmi berikut:</p>
+          <span class="hashtag">#KopmaUNY</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-head">
+      <span class="eyebrow">Kenapa Bekerja Sama dengan Kami</span>
+      <h2>Nilai Lebih yang Kamu Dapatkan</h2>
+    </div>
+    <div class="benefits">
+      <div class="benefit">
+        <div class="ico">1</div>
+        <h4>Sesama Mahasiswa, Sepenuh Hati</h4>
+        <p>Kami memahami ritme dan kebutuhan panitia karena kami pun mahasiswa yang menjalankan organisasi ini secara langsung.</p>
+      </div>
+      <div class="benefit">
+        <div class="ico">2</div>
+        <h4>Dukungan Nyata, Bukan Sekadar Janji</h4>
+        <p>Fresh money, voucher, dan harga khusus yang benar-benar membantu meringankan kebutuhan operasional acara.</p>
+      </div>
+      <div class="benefit">
+        <div class="ico">3</div>
+        <h4>Kerjasama yang Berkelanjutan</h4>
+        <p>Voucher belanja khusus tetap berlaku pascaacara, menjadikan kolaborasi ini bernilai jangka panjang.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="kontak">
+  <div class="wrap cta-inner">
+    <span class="eyebrow" style="color:var(--gold-soft)">Mari Berdiskusi Lebih Lanjut</span>
+    <h2>Siap Menjalin Kerjasama dengan Kopma UNY?</h2>
+    <p>Tim kami terbuka untuk berdiskusi lebih lanjut mengenai detail, penyesuaian paket, maupun benefit tambahan yang kalian butuhkan.</p>
+    <div class="contact-card">
+      <div class="c-item">
+        <div class="lbl">Narahubung</div>
+        <div class="val">Kopma UNY</div>
+      </div>
+      <div class="c-item">
+        <div class="lbl">WhatsApp — Pasha</div>
+        <div class="val">0821-9041-7858</div>
+      </div>
+      <div class="c-item">
+        <div class="lbl">WhatsApp — Bisnis Kopma UNY</div>
+        <div class="val">0857-0109-6950</div>
+      </div>
+    </div>
+    <div style="margin-top:20px; display:flex; gap:14px; justify-content:center; flex-wrap:wrap;">
+      <a href="https://wa.me/6282190417858" class="btn btn-gold">Chat Pasha</a>
+      <a href="https://wa.me/6285701096950" class="btn btn-gold">Chat Bisnis Kopma UNY</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <strong>Kopma UNY</strong> — Koperasi Mahasiswa Universitas Negeri Yogyakarta · Sejak 1982<br>
+    Dokumen ini disusun sebagai proposal penawaran digital untuk Panitia PKKMB Fakultas UNY 2026
+  </div>
+</footer>
+
+</body>
+</html>
