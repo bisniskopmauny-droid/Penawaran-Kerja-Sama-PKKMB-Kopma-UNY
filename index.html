@@ -126,7 +126,16 @@
   .letter .sign .name{ font-family:Georgia,serif; font-size:21px; color:var(--navy-deep); margin-top:4px; }
 
   .units{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); margin-top:10px;}
-  .unit{ background:var(--white); padding:30px 24px; font-family:-apple-system,"Segoe UI",sans-serif; }
+  .unit{ background:var(--white); padding:30px 24px; font-family:-apple-system,"Segoe UI",sans-serif; display:flex; flex-direction:column; text-decoration:none; transition:background .25s ease, transform .25s ease; position:relative; }
+  .unit:hover{ background:var(--cream); transform:translateY(-3px); }
+  .unit-ig-cta{
+    display:inline-flex; align-items:center; gap:7px; margin-top:18px;
+    font-size:13px; font-weight:700; letter-spacing:.3px; color:var(--gold);
+    font-family:-apple-system,"Segoe UI",sans-serif;
+  }
+  .unit-ig-cta svg{ width:15px; height:15px; flex-shrink:0; }
+  .unit-ig-cta .arrow{ transition:transform .25s ease; }
+  .unit:hover .unit-ig-cta .arrow{ transform:translateX(4px); }
   .unit-logo{
     width:56px; height:56px; border-radius:50%; margin-bottom:16px;
     display:flex; align-items:center; justify-content:center;
@@ -352,30 +361,46 @@
       <p>Kopma UNY adalah koperasi konsumen berbasis mahasiswa yang telah berdiri lebih dari empat dekade, dengan jangkauan usaha yang menyatu dalam keseharian civitas akademika UNY.</p>
     </div>
     <div class="units">
-      <div class="unit reveal reveal-1">
+      <a href="https://www.instagram.com/minimarket_kopmauny" target="_blank" rel="noopener" class="unit reveal reveal-1">
         <div class="unit-logo logo-minimarket"><span class="mm-top"><b>M</b>ini</span><span class="mm-bottom">Market</span></div>
         <div class="tag">Ritel</div>
         <h4>Minimarket Kopma</h4>
         <p>Belanja kebutuhan harian, atribut kampus, sampai perlengkapan kos — lengkap, dekat, dan harganya bersahabat buat mahasiswa.</p>
-      </div>
-      <div class="unit reveal reveal-2">
+        <span class="unit-ig-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Kunjungi Instagram <span class="arrow">→</span>
+        </span>
+      </a>
+      <a href="https://www.instagram.com/ayamgeprek.sarjana" target="_blank" rel="noopener" class="unit reveal reveal-2">
         <div class="unit-logo logo-geprek">Ayam<br>Geprek</div>
         <div class="tag">Kuliner</div>
         <h4>Ayam Geprek Sarjana</h4>
         <p>Kuliner legendaris yang jadi tempat nongkrong favorit mahasiswa UNY lintas angkatan — pedasnya bikin nagih.</p>
-      </div>
-      <div class="unit reveal reveal-3">
+        <span class="unit-ig-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Kunjungi Instagram <span class="arrow">→</span>
+        </span>
+      </a>
+      <a href="https://www.instagram.com/olekerbykopmauny" target="_blank" rel="noopener" class="unit reveal reveal-3">
         <div class="unit-logo logo-oleker">O'Leker</div>
         <div class="tag">Kuliner</div>
         <h4>O'Leker by Kopma UNY</h4>
         <p>Camilan crepes khas Kopma yang manis-gurih, jadi teman santai mahasiswa di sela jam kuliah.</p>
-      </div>
-      <div class="unit reveal reveal-4">
+        <span class="unit-ig-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Kunjungi Instagram <span class="arrow">→</span>
+        </span>
+      </a>
+      <a href="https://www.instagram.com/jasakopmauny" target="_blank" rel="noopener" class="unit reveal reveal-4">
         <div class="unit-logo logo-jnp">J&P</div>
         <div class="tag">Layanan</div>
         <h4>Jasa & Persewaan Kopma</h4>
         <p>Sewa peralatan acara — sound, tenda, meja kursi, dan lainnya — siap membantu teknis PKKMB Fakultas berjalan lancar.</p>
-      </div>
+        <span class="unit-ig-cta">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+          Kunjungi Instagram <span class="arrow">→</span>
+        </span>
+      </a>
     </div>
     <div class="about-stats reveal">
       <div class="stat"><b>1982</b><span>Tahun berdiri</span></div>
