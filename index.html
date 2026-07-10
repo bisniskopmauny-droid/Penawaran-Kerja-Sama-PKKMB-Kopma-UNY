@@ -278,7 +278,29 @@
     font-weight:700; font-size:13px; letter-spacing:.5px;
   }
 
-  .cta-section{
+  .voucher-section{ background:var(--cream); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .voucher-grid{ display:grid; grid-template-columns:1fr; gap:26px; margin-top:12px; }
+  .voucher-item{ display:flex; flex-direction:column; }
+  .voucher-label{
+    align-self:flex-start; margin-bottom:10px;
+    color:var(--navy-deep); font-weight:800;
+    font-family:'Trebuchet MS', -apple-system, sans-serif; font-size:19px; letter-spacing:.2px;
+  }
+  .voucher-card{
+    border-radius:10px; overflow:hidden; border:1px solid var(--line);
+    box-shadow:0 25px 55px -32px rgba(11,37,69,.35); background:#0E7C6E;
+    aspect-ratio:16/6; display:flex; align-items:center; justify-content:center;
+    position:relative;
+  }
+  .voucher-card img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .voucher-card .placeholder{
+    color:rgba(255,255,255,.7); font-family:-apple-system,"Segoe UI",sans-serif;
+    font-size:13px; text-align:center; padding:20px; font-style:italic;
+  }
+  .voucher-note{
+    margin-top:28px; font-family:-apple-system,"Segoe UI",sans-serif; font-size:14.5px;
+    color:var(--ink-soft); font-style:italic;
+  }
     background: linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
     color:var(--white); text-align:center; position:relative; overflow:hidden;
   }
@@ -542,6 +564,61 @@
         <p>Voucher belanja khusus tetap berlaku pasca acara, menjadikan kolaborasi ini bernilai jangka panjang.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="voucher-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Benefit Tambahan</span>
+      <h2 style="font-family:'Trebuchet MS',-apple-system,sans-serif; font-weight:800; letter-spacing:-.5px; color:var(--navy-deep);">Free Voucher Trip ke Berbagai Destinasi Hiburan & Kuliner</h2>
+      <p>Sebagai nilai tambah, Kopma UNY turut menyediakan voucher diskon dari mitra kami untuk dibagikan kepada peserta PKKMB.</p>
+    </div>
+    <div class="voucher-grid">
+      <div class="voucher-item reveal reveal-1">
+        <span class="voucher-label">Voucher VW Tour Borobudur</span>
+        <div class="voucher-card">
+          <img src="assets/voucher-vw-borobudur.jpg" alt="Voucher VW Tour Borobudur" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none;">(gambar belum diunggah)</div>
+        </div>
+      </div>
+      <div class="voucher-item reveal reveal-2">
+        <span class="voucher-label">Voucher Open Trip Bromo</span>
+        <div class="voucher-card">
+          <img src="assets/voucher-bromo.jpg" alt="Voucher Open Trip Bromo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none;">(gambar belum diunggah)</div>
+        </div>
+      </div>
+      <div class="voucher-item reveal reveal-1">
+        <span class="voucher-label">Voucher Open Trip Dieng</span>
+        <div class="voucher-card">
+          <img src="assets/voucher-dieng.jpg" alt="Voucher Open Trip Dieng" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none;">(gambar belum diunggah)</div>
+        </div>
+      </div>
+      <div class="voucher-item reveal reveal-2">
+        <span class="voucher-label">Voucher Travel KKL / KI</span>
+        <div class="voucher-card">
+          <img src="assets/voucher-kkl.jpg" alt="Voucher Travel KKL/KI" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none;">(gambar belum diunggah)</div>
+        </div>
+      </div>
+      <div class="voucher-item reveal reveal-1">
+        <span class="voucher-label">Voucher Jeep Lava Tour Merapi</span>
+        <div class="voucher-card">
+          <img src="assets/voucher-jeep-merapi.jpg" alt="Voucher Jeep Lava Tour Merapi" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none;">(gambar belum diunggah)</div>
+        </div>
+      </div>
+      <div class="voucher-item reveal reveal-2">
+        <span class="voucher-label">Voucher Kedai Rasabaik</span>
+        <div class="voucher-card">
+          <img src="assets/voucher-rasabaik.jpg" alt="Voucher Kedai Rasabaik" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="placeholder" style="display:none;">(gambar belum diunggah)</div>
+        </div>
+      </div>
+    </div>
+    <p class="voucher-note">Voucher berlaku sesuai masa aktif tertera pada masing-masing desain dan ditukarkan melalui admin mitra terkait.</p>
   </div>
 </section>
 
