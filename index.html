@@ -195,9 +195,12 @@
     content:""; position:absolute; top:0; left:0; right:0; height:5px;
     background:linear-gradient(90deg, var(--accent-b), var(--accent-b2));
   }
-  .pkg-name{ font-size:12px; letter-spacing:2.5px; text-transform:uppercase; font-weight:800; font-family:'Trebuchet MS',sans-serif; }
-  .pkg.pkg-a .pkg-name{ color:var(--accent-a2); }
-  .pkg.pkg-b .pkg-name{ color:var(--accent-b2); }
+  .pkg-name{
+    display:inline-block; font-size:14px; letter-spacing:2px; text-transform:uppercase; font-weight:800;
+    font-family:'Trebuchet MS',sans-serif; padding:8px 18px; border-radius:20px;
+  }
+  .pkg.pkg-a .pkg-name{ background:rgba(255,107,53,.18); border:1.5px solid var(--accent-a2); color:var(--accent-a2); }
+  .pkg.pkg-b .pkg-name{ background:rgba(0,180,166,.18); border:1.5px solid var(--accent-b2); color:var(--accent-b2); }
   .pkg h3{
     font-size:30px; font-weight:800; margin:10px 0 4px; color:var(--white);
     font-family:'Trebuchet MS', -apple-system, sans-serif; letter-spacing:-.5px;
